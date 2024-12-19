@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   int leftDice=Random().nextInt(6) + 1;
   int rightDice = Random().nextInt(6) + 1;
 
+
   @override
   Widget  build(BuildContext context) {
     return  Scaffold(
@@ -49,8 +50,13 @@ class _HomePageState extends State<HomePage> {
                     
                     leftDice = Random().nextInt(6) + 1;
                     rightDice = Random().nextInt(6) + 1;
+                    if (rightDice == leftDice) {
+                      print("GANASTE "); 
+                    }else{
+                      print("Intenta de nuevo");
+                    }
                     setState(() {});
-                    print("Dado izquierdo");
+                    //print("Dado izquierdo");
                   },
                   child: Image.asset('assets/images/dice$leftDice.png')),
             ),
@@ -61,11 +67,17 @@ class _HomePageState extends State<HomePage> {
                     
                     rightDice = Random().nextInt(6) + 1;
                     leftDice = Random().nextInt(6) + 1;
+                    if (rightDice == leftDice) {
+                      print("GANASTE "); 
+                    }else{
+                      print("Intenta de nuevo");
+                    }
                     setState(() {});
-                    print("Dado derecho");
+                   // print("Dado derecho");
                   },
                   child: Image.asset('assets/images/dice$rightDice.png')),
             ),
+            
           ],
         ),
       ),
